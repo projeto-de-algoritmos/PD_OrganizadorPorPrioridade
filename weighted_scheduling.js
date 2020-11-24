@@ -2,6 +2,11 @@ class Scheduling {
 
   constructor(json) {
     this.data = json;
+    this.memoization = [];
+
+    for(let i = 0; i < json.length; ++i) {
+      this.memoization[i] = 0;
+    }
   
   }
 
@@ -43,4 +48,5 @@ let json = [
 
 let schedule = new Scheduling(json);
 
+console.log(schedule.memoization);
 console.log(schedule.sort_vector());
