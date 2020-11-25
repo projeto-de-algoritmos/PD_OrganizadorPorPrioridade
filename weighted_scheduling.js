@@ -2,12 +2,13 @@ class Scheduling {
 
   constructor(json) {
     this.data = json;
-    this.memoization = [];
+    this.memoization = [0]; // memoization[0] = 0
     this.sortedVector = [];
     this.p = [null]; // p[0] é vazio
 
-    for(let i = 0; i < json.length; ++i) {
-      this.memoization[i] = 0;
+    for(let i = 1; i < json.length; ++i) {
+      this.memoization[i] = null; 
+      // Coloquei null pois não sei se algum Memoization pode retornar 0
     }
   
   }
@@ -39,6 +40,15 @@ class Scheduling {
           this.p[i] = null;
         }
       }
+    }
+  }
+
+  OPT(j){
+    if(this.memoization[j] === null){
+      this.memoization[j] = Math.max((this.sortedVector[j].value + this.OPT(this.p[j])), OPT(j-1));
+      return this.memoization[j];
+    }else{
+      return this.memoization[j];
     }
   }
 
@@ -84,3 +94,6 @@ console.log(schedule.sort_vector());
 
 schedule.fillP();
 console.log(schedule.p);
+
+schedule.OPT(4);
+console.log(schedule.memoization);
