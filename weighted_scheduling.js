@@ -43,6 +43,19 @@ class Scheduling {
     }
   }
 
+  fill2P() {
+    for(let i = (this.sortedVector.length - 1); i > 1; --i){
+      for(let j = (i - 1); j > 0; --j) {
+        if (this.sortedVector[i].start >= this.sortedVector[j].deadline ){
+          this.p[i] = j;
+          j = 0;
+        } else {
+          this.p[i] = 0;
+        }
+      }
+    }
+  }
+
   OPT(j){
     if(this.memoization[j] == null){
       this.memoization[j] = Math.max((this.sortedVector[j].value + this.OPT(this.p[j])), this.OPT(j-1));
@@ -87,14 +100,62 @@ let json = [
   },
 ];
 
-let schedule = new Scheduling(json);
+let json2 = [
+  {
+    task: '3',
+    value: 3,
+    start: 0,
+    deadline: 6,
+  },
+  {
+    task: '2',
+    value: 2,
+    start: 3,
+    deadline: 5, 
+  },
+  {
+    task: '1',
+    value: 1,
+    start: 1,
+    deadline: 4,
+  },
+  {
+    task: '5',
+    value: 5,
+    start: 3,
+    deadline: 8,
+  },
+  {
+    task: '4',
+    value: 4,
+    start: 4,
+    deadline: 7,
+  },
+  {
+    task: '8',
+    value: 8,
+    start: 8,
+    deadline: 11,
+  },
+  {
+    task: '6',
+    value: 6,
+    start: 5,
+    deadline: 9,
+  },
+  {
+    task: '7',
+    value: 7,
+    start: 6,
+    deadline: 10,
+  },
+  
+];
 
-// console.log(schedule.memoization);
+let schedule = new Scheduling(json2);
 
 console.log(schedule.sort_vector());
-// schedule.sort_vector();
 schedule.fill2P();
 console.log(schedule.p);
-schedule.OPT(json.length - 1);
-// console.log(schedule.OPT(json.length + 1));
+schedule.OPT(json2.length - 1);
 console.log(schedule.memoization);
