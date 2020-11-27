@@ -5,6 +5,7 @@ class Scheduling {
     this.memoization = [0]; // memoization[0] = 0
     this.sortedVector = [0];
     this.p = [0,0]; // p[0] é vazio
+    this.solutionSet = [];
 
     for(let i = 1; i <= json.length; ++i) {
       this.memoization[i] = null; 
@@ -62,6 +63,19 @@ class Scheduling {
       return this.memoization[j];
     }else{
       return this.memoization[j];
+    }
+  }
+
+  findSolution(j) {
+    if(j == 0) {
+      return;
+    }
+    else if(this.sortedVector[j].value + this.memoization[this.p[j]] >= this.memoization[j - 1]) {
+      this.solutionSet.push(this.sortedVector[j]);
+      this.findSolution(this.p[j]);
+    }
+    else {
+      this.findSolution(j - 1);
     }
   }
 
@@ -159,3 +173,5 @@ schedule.fill2P();
 console.log(schedule.p);
 schedule.OPT(json2.length - 1);
 console.log(schedule.memoization);
+schedule.findSolution(json2.length - 1);
+console.log(schedule.solutionSet);
