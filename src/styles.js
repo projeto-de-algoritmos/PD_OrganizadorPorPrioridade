@@ -82,5 +82,10 @@ export const TableContainer = styled.div`
     td:last-child {
       border-radius: 0 8px 8px 0;
     }
+
+    td.solution {
+      background-color: green;
+      color: #fff;
+    }
   }
 `;

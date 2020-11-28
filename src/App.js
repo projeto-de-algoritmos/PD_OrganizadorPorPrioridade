@@ -68,10 +68,10 @@ function App() {
             <tbody>
               {solution.length ? solution.map((solution, index) => (
                 <tr key={index}>
-                  <td>{solution.name}</td>
-                  <td>{solution.value}</td>
-                  <td>{solution.start}</td>
-                  <td>{solution.end}</td>
+                  <td class="solution">{solution.name}</td>
+                  <td class="solution">{solution.value}</td>
+                  <td class="solution">{solution.start}</td>
+                  <td class="solution">{solution.end}</td>
                 </tr>
               )) : tasks.map((task, index) => (
                 <tr key={index}>
