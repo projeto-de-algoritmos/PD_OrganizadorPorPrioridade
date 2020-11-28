@@ -2,6 +2,7 @@ class Scheduling {
 
   constructor(json) {
     this.data = json;
+
     this.memoization = [0]; // memoization[0] = 0
     this.sortedVector = [0];
     this.p = [0,0]; // p[0] é vazio
@@ -166,6 +167,7 @@ let json2 = [
   
 ];
 
+
 let schedule = new Scheduling(json2);
 
 console.log(schedule.sort_vector());
@@ -175,3 +177,4 @@ schedule.OPT(json2.length - 1);
 console.log(schedule.memoization);
 schedule.findSolution(json2.length - 1);
 console.log(schedule.solutionSet);
+
