@@ -1,7 +1,6 @@
-# NomedoProjeto
+# Organizador por prioridade
 
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Conteúdo da Disciplina**: Programação Dinâmica<br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -10,21 +9,27 @@
 | 18/0129058  |  Paulo Victor |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Auxiliar a organização de tarefas de uma pessoa levando em consideração que certas atividades exigem uma prioridade maior que outras. Dessa forma, nossa solução auxilia o usuário a descobrir quais atividades ele deveria fazer naquele dia de forma a realizar o máximo de atividades, sempre lembrando da prioridade de cada uma. 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+<p align="center">
+  <img alt="Capa" src="https://github.com/twistershark/PD_Scheduling/blob/master/assets/organizador1.png" />
+</p>
+<p align="center">
+  <img alt="Capa" src="https://github.com/twistershark/PD_Scheduling/blob/master/assets/organizador2.png" />
+</p>
 
 ## Instalação 
 **Linguagem**: Javascript<br>
 **Framework**: React<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+
+Para execução, é necessário:
+- NodeJS
+- Yarn
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Após clonar o repositório do projeto, navegue para a pasta do repositório clonado e execute o comando ``` yarn ``` para instalar todas as dependências necessárias. Depois, basta executar ``` yarn start ``` para iniciar a aplicação e seguir as instruções presentes na mesma.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
 
 
 

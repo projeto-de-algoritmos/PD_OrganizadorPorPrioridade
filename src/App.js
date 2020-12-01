@@ -1,6 +1,15 @@
 import React, { useCallback, useState } from 'react';
 
-import { Container, TableContainer, InputContainer, Input, Button } from './styles';
+import { 
+  Container, 
+  TableContainer, 
+  InputContainer, 
+  Input, 
+  Button, 
+  Title, 
+  TextDescription,
+  SolutionText
+} from './styles';
 
 import Scheduling from './weighted_scheduling';
 
@@ -21,6 +30,7 @@ function App() {
     schedule.findSolution(tasks.length - 1);
 
     const solution = schedule.solutionSet;
+    console.log(solution);
     setSolution([...solution]);
     setTasks([]);
   }, [tasks]);
@@ -40,6 +50,16 @@ function App() {
 
   return (
     <Container>
+
+    <Title>
+      Organizador de tarefas por prioridade
+    </Title>
+    <TextDescription>
+    Você costuma ter dificuldades para definir seu horário e quais atividades você precisa fazer de forma a conseguir ser mais produtivo levando em consideração a importância de cada tarefa?
+    Nós vamos te ajudar! Basta inserir as atividades que você precisa fazer com seus respectivos pesos e depois clicar em solução para saber qual a melhor combinação de tarefas para que você consiga extrair o máximo do seu tempo.
+    </TextDescription>
+
+
     <InputContainer>
     <span>Nome:</span>
       <Input value={name} required onChange={(name) => setName(name.target.value)} placeholder="Nome da atividade" />
@@ -51,6 +71,8 @@ function App() {
       <Input  value={end} required onChange={(end) => setEnd(end.target.value)} placeholder="Ex = 15" />
     </InputContainer>
     <Button onClick={handleAddTask}>Adicionar</Button>
+
+    <SolutionText>Adicionou todas as atividades? Basta clicar em solução para descobrir qual a melhor combinação de atividades para hoje.</SolutionText>
     <Button onClick={handleSolution}>Solução</Button>
 
 
@@ -68,10 +90,10 @@ function App() {
             <tbody>
               {solution.length ? solution.map((solution, index) => (
                 <tr key={index}>
-                  <td class="solution">{solution.name}</td>
-                  <td class="solution">{solution.value}</td>
-                  <td class="solution">{solution.start}</td>
-                  <td class="solution">{solution.end}</td>
+                  <td className="solution">{solution.name}</td>
+                  <td className="solution">{solution.value}</td>
+                  <td className="solution">{solution.start}</td>
+                  <td className="solution">{solution.end}</td>
                 </tr>
               )) : tasks.map((task, index) => (
                 <tr key={index}>

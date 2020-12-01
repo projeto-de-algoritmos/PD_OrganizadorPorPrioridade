@@ -67,6 +67,7 @@ export default class Scheduling {
   }
 
   findSolution(j) {
+    console.log(this.solutionSet);
     if(j === 0) {
       return;
     }

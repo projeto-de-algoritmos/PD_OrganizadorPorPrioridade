@@ -89,3 +89,22 @@ export const TableContainer = styled.div`
     }
   }
 `;
+
+
+export const Title = styled.h1`
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+export const TextDescription = styled.span`
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 18px;
+`;
+
+export const SolutionText = styled.span`
+  font-weight: bold;
+  text-align: center;
+  margin-top: 35px;
+`;
