@@ -13,10 +13,10 @@ Auxiliar a organização de tarefas de uma pessoa levando em consideração que 
 
 ## Screenshots
 <p align="center">
-  <img alt="Capa" src="https://github.com/projeto-de-algoritmos/PD_Scheduling/blob/master/assets/organizador1.png" />
+  <img alt="Capa" src="https://github.com/twistershark/PD_Scheduling/blob/master/assets/organizador1.png" />
 </p>
 <p align="center">
-  <img alt="Capa" src="https://github.com/projeto-de-algoritmos/PD_Scheduling/blob/master/assets/organizador2.png" />
+  <img alt="Capa" src="https://github.com/twistershark/PD_Scheduling/blob/master/assets/organizador2.png" />
 </p>
 
 ## Instalação 
