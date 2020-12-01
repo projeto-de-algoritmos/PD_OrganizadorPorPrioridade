@@ -16,10 +16,10 @@ export default class Scheduling {
   }
 
   sort_vector() {
-    let new_vector = this.data.sort((a, b) =>{
+    let new_vector = this.data.sort(function (a, b) {
       if(a.deadline < b.deadline) {
         return -1;
-      } else  {
+      } else if (a.deadline > b.deadline)  {
         return 1;
       }
 
@@ -29,19 +29,6 @@ export default class Scheduling {
 
     this.sortedVector = new_vector;
     return new_vector;
-  }
-
-  fillP() {
-    for(let i = 1; i < this.sortedVector.length; i++){
-      for(let j = i; j >= 0; j--) {
-        if (this.sortedVector[i].start >= this.sortedVector[j].deadline ){
-          this.p[i] = this.sortedVector[j];
-          j = 0;
-        } else {
-          this.p[i] = null;
-        }
-      }
-    }
   }
 
   fill2P() {
@@ -67,7 +54,6 @@ export default class Scheduling {
   }
 
   findSolution(j) {
-    console.log(this.solutionSet);
     if(j === 0) {
       return;
     }

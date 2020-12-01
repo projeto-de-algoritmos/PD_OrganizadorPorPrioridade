@@ -17,36 +17,36 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [solution, setSolution] = useState([]);
 
-  const [name, setName] = useState('');
+  const [task, setTask] = useState('');
   const [value, setValue] = useState(undefined);
   const [start, setStart] = useState(undefined);
-  const [end, setEnd] = useState(undefined);
+  const [deadline, setDeadline] = useState(undefined);
 
   const handleSolution = useCallback(() => {
     const schedule = new Scheduling(tasks);
+
     schedule.sort_vector();
     schedule.fill2P();
     schedule.OPT(tasks.length - 1);
     schedule.findSolution(tasks.length - 1);
 
-    const solution = schedule.solutionSet;
-    console.log(solution);
+    const solution = schedule.solutionSet.reverse();
     setSolution([...solution]);
     setTasks([]);
   }, [tasks]);
 
   const handleAddTask = useCallback(() => {
-    if(name.length && value && start && end){
+    if(task.length && value && start && deadline){
       setSolution([]);
-      setTasks(prevTasks => ([...prevTasks, { name, value, start, end }]));
+      setTasks(prevTasks => ([...prevTasks, { task, value, start, deadline }]));
 
-      setName('');
+      setTask('');
       setValue(0);
       setStart(0);
-      setEnd(0);
+      setDeadline(0);
     }
 
-  }, [name, value, start, end]);
+  }, [task, value, start, deadline]);
 
   return (
     <Container>
@@ -62,13 +62,13 @@ function App() {
 
     <InputContainer>
     <span>Nome:</span>
-      <Input value={name} required onChange={(name) => setName(name.target.value)} placeholder="Nome da atividade" />
+      <Input value={task} required onChange={(task) => setTask(task.target.value)} placeholder="Nome da atividade" />
     <span>Peso da atividade:</span>
       <Input value={value} required onChange={(value) => setValue(value.target.value)} placeholder="Ex = 2" />
     <span>Início:</span>
       <Input  value={start} required onChange={(start) => setStart(start.target.value)} placeholder="Ex = 12" />
     <span>Término:</span>
-      <Input  value={end} required onChange={(end) => setEnd(end.target.value)} placeholder="Ex = 15" />
+      <Input  value={deadline} required onChange={(deadline) => setDeadline(deadline.target.value)} placeholder="Ex = 15" />
     </InputContainer>
     <Button onClick={handleAddTask}>Adicionar</Button>
 
@@ -90,17 +90,17 @@ function App() {
             <tbody>
               {solution.length ? solution.map((solution, index) => (
                 <tr key={index}>
-                  <td className="solution">{solution.name}</td>
+                  <td className="solution">{solution.task}</td>
                   <td className="solution">{solution.value}</td>
                   <td className="solution">{solution.start}</td>
-                  <td className="solution">{solution.end}</td>
+                  <td className="solution">{solution.deadline}</td>
                 </tr>
               )) : tasks.map((task, index) => (
                 <tr key={index}>
-                  <td >{task.name}</td>
+                  <td >{task.task}</td>
                   <td>{task.value}</td>
                   <td>{task.start}</td>
-                  <td>{task.end}</td>
+                  <td>{task.deadline}</td>
                 </tr>
               ))}
               
