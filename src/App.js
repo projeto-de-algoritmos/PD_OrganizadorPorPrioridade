@@ -52,11 +52,11 @@ function App() {
     <Container>
 
     <Title>
-      Organizador de tarefas por prioridade
+      Organizador de atividade por prioridade
     </Title>
     <TextDescription>
-    Você costuma ter dificuldades para definir seu horário e quais atividades você precisa fazer de forma a conseguir ser mais produtivo levando em consideração a importância de cada tarefa?
-    Nós vamos te ajudar! Basta inserir as atividades que você precisa fazer com seus respectivos pesos e depois clicar em solução para saber qual a melhor combinação de tarefas para que você consiga extrair o máximo do seu tempo.
+    Você costuma ter dificuldades para definir seu horário e quais atividades você precisa fazer de forma a conseguir ser mais produtivo levando em consideração a importância de cada atividade?
+    Nós vamos te ajudar! Basta inserir as atividades que você precisa fazer com seus respectivos pesos e depois clicar em solução para saber qual a melhor combinação de atividade para que você consiga extrair o máximo do seu tempo.
     </TextDescription>
 
 
