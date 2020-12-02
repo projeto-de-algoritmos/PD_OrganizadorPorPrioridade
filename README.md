@@ -13,6 +13,8 @@ Auxiliar a organização de tarefas de uma pessoa levando em consideração que 
 
 <p align="center">
 Você pode acessar a demo online através do link: https://organizadorporprioridade.netlify.app
+<p align="center">
+Segue o vídeo explicativo: https://www.youtube.com/watch?v=pR6E9ALdDqI
 </p>
 
 ## Screenshots
